@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <form class="login" [formGroup]="searchSongForm">
+            <div class="login__field">
+                <input type="text" formControlName="search" class="form-control" placeholder="Search Song">
+
+            </div>
+            <div class="login__field">
+                <input type="button" class="form-control" value="Search" (click)="Search()"
+                    style="width: 200px;text-align: center; float: right;" />
+            </div>
+        </form>
+    </div>
+    <div class="row">
+
+        <table class="row-border hover">
+            <thead>
+                <tr>
+                    <th>Artist Name</th>
+                    <th>Type</th>
+                    <th>Song Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let searchValue of songsData">
+                    <td>{{searchValue?.artist?.nameWithoutThePrefix}}</td>
+                    <td>{{searchValue?.type}}</td>
+                    <td>{{searchValue?.title}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+<!-- <div class="screen">
+        <div class="screen__content">
+            <form class="login" [formGroup]="searchSongForm">
+                <div class="login__field">
+                    <input type="text" formControlName="search" class="login__input" placeholder="Search Song">
+
+                </div>
+                <div class="login__field">
+                    <button class="button login__submit" (click)="Search()">
+                        <span class="button__text">Search</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div> -->
